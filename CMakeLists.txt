@@ -28,9 +28,12 @@ endif()
 # Look up SDL2 and add the include directory to our include path
 
 find_package(SDL2 REQUIRED)
+find_package(Boost 1.65 REQUIRED)
 
 include_directories(utils/headers)
 
 add_subdirectory(utils)
 add_subdirectory(Lesson0)
 add_subdirectory(Lesson1)
+
+file(INSTALL ${SDLLessons_SOURCE_DIR}/resources DESTINATION ${BIN_DIR})
